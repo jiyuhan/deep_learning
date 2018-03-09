@@ -1,0 +1,50 @@
+Mapped name None to device cuda: GeForce GTX 760 (0000:01:00.0)
+50000 training data 10000 test data
+Trying to run under a GPU.  If this is not desired, then modify network3.py to set the GPU flag to False.
+0.8
+Epoch 0: test accuracy 30.51%
+This is the best test accuracy so far.
+Epoch 1: test accuracy 34.25%
+This is the best test accuracy so far.
+Epoch 2: test accuracy 35.64%
+This is the best test accuracy so far.
+Epoch 3: test accuracy 36.53%
+This is the best test accuracy so far.
+Epoch 4: test accuracy 37.16%
+This is the best test accuracy so far.
+Epoch 5: test accuracy 37.25%
+This is the best test accuracy so far.
+Epoch 6: test accuracy 37.68%
+This is the best test accuracy so far.
+Epoch 7: test accuracy 37.56%
+Epoch 8: test accuracy 37.46%
+Epoch 9: test accuracy 37.89%
+This is the best test accuracy so far.
+Epoch 10: test accuracy 37.95%
+This is the best test accuracy so far.
+Epoch 11: test accuracy 38.40%
+This is the best test accuracy so far.
+Epoch 12: test accuracy 39.06%
+This is the best test accuracy so far.
+Epoch 13: test accuracy 39.01%
+Epoch 14: test accuracy 39.39%
+This is the best test accuracy so far.
+Epoch 15: test accuracy 39.22%
+Epoch 16: test accuracy 39.53%
+This is the best test accuracy so far.
+Epoch 17: test accuracy 39.53%
+Epoch 18: test accuracy 39.29%
+Epoch 19: test accuracy 39.09%
+Epoch 20: test accuracy 39.17%
+Epoch 21: test accuracy 39.31%
+Epoch 22: test accuracy 39.44%
+Epoch 23: test accuracy 39.52%
+Epoch 24: test accuracy 39.00%
+Epoch 25: test accuracy 38.75%
+Epoch 26: test accuracy 38.36%
+Epoch 27: test accuracy 38.53%
+Epoch 28: test accuracy 38.18%
+Epoch 29: test accuracy 38.07%
+Best test accuracy of 39.53% obtained at Epoch 16
+run time: 639.0769383907318 seconds
+
