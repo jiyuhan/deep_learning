@@ -1,0 +1,47 @@
+50000 training data 10000 test data
+Running with a CPU.  If this is not desired, then the modify network3.py to set the GPU flag to True.
+0.1
+gamma is:  0.1
+momentum is On
+Epoch 0: test accuracy 30.47%
+This is the best test accuracy so far.
+Epoch 1: test accuracy 34.32%
+This is the best test accuracy so far.
+Epoch 2: test accuracy 35.61%
+This is the best test accuracy so far.
+Epoch 3: test accuracy 36.87%
+This is the best test accuracy so far.
+Epoch 4: test accuracy 37.08%
+This is the best test accuracy so far.
+Epoch 5: test accuracy 37.24%
+This is the best test accuracy so far.
+Epoch 6: test accuracy 37.40%
+This is the best test accuracy so far.
+Epoch 7: test accuracy 37.72%
+This is the best test accuracy so far.
+Epoch 8: test accuracy 37.63%
+Epoch 9: test accuracy 38.11%
+This is the best test accuracy so far.
+Epoch 10: test accuracy 38.47%
+This is the best test accuracy so far.
+Epoch 11: test accuracy 38.03%
+Epoch 12: test accuracy 38.05%
+Epoch 13: test accuracy 38.33%
+Epoch 14: test accuracy 38.37%
+Epoch 15: test accuracy 38.02%
+Epoch 16: test accuracy 38.17%
+Epoch 17: test accuracy 37.91%
+Epoch 18: test accuracy 38.01%
+Epoch 19: test accuracy 38.03%
+Epoch 20: test accuracy 37.66%
+Epoch 21: test accuracy 38.05%
+Epoch 22: test accuracy 37.72%
+Epoch 23: test accuracy 38.07%
+Epoch 24: test accuracy 38.04%
+Epoch 25: test accuracy 38.03%
+Epoch 26: test accuracy 38.11%
+Epoch 27: test accuracy 37.62%
+Epoch 28: test accuracy 37.65%
+Epoch 29: test accuracy 36.92%
+Best test accuracy of 38.47% obtained at Epoch 10
+run time: 2456.496980905533 seconds
