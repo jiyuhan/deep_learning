@@ -48,8 +48,8 @@ from theano.tensor.nnet import sigmoid
 
 
 #### Constants
+GPU = False
 # GPU = True
-GPU = True
 if GPU:
     print("Trying to run under a GPU.  If this is not desired, then modify "+\
         "network3.py to set the GPU flag to False.")
@@ -80,44 +80,37 @@ def load_data_shared(filename="mnist.pkl.gz"):
 #### Main class used to construct and train networks
 class Network():
 
-    def __init__(self, layers, mini_batch_size):
+    def __init__(self, layers, mini_batch_size, gamma, momentum):
         """Takes a list of `layers`, describing the network architecture, and
         a value for the `mini_batch_size` to be used during training
         by stochastic gradient descent.
 
         """
+        self.gamma = gamma
+        self.momentum = momentum
         self.layers = layers
         self.mini_batch_size = mini_batch_size
         self.params = [param for layer in self.layers for param in layer.params]
         self.x = T.matrix("x")
         self.y = T.ivector("y")
-        self.gamma = 0.8 # 0.05, 0.1, 0.2, 0.4
-
-        
         init_layer = self.layers[0]
         init_layer.set_connection(self.x, self.mini_batch_size)
-        
         for j in range(1, len(self.layers)): # xrange() was renamed to range() in Python 3.
             prev_layer, layer  = self.layers[j-1], self.layers[j]
             layer.set_connection(
                 prev_layer.output, self.mini_batch_size)
         self.output = self.layers[-1].output
-        
-    def updates_momentum(self, cost, eta):
-
-        assert self.gamma < 1 and self.gamma >= 0
+    
+    def gradient_updates_momentum(self, cost, learning_rate):
+        print("gamma is: ", self.gamma)
+        print("momentum is", ("On" if self.momentum else "Off"))
         updates = []
-      
         for param in self.params:
-            
             previous_step = theano.shared(param.get_value()*0., broadcastable=param.broadcastable)
-            step = self.gamma*previous_step - eta*T.grad(cost, param)
-            
+            step = self.gamma*previous_step - learning_rate*T.grad(cost, param)
             updates.append((previous_step, step))
             updates.append((param, param + step))
-            
         return updates
-    
 
 
     def SGD(self, training_data, epochs, mini_batch_size, eta,
@@ -135,23 +128,17 @@ class Network():
         L2_norm_squared = sum([(layer.w**2).sum() for layer in self.layers])
         cost = self.layers[-1].cost(self)+\
                0.5*lmbda*L2_norm_squared/num_training_batches
-               
-        #grads = T.grad(cost, self.params)
-         
-        #updates = [(momentum_param, momentum_param* self.gamma - eta*grad)
-         #          for momentum_param, grad in zip(self.momentum_params, grads)]
-
-
-        updates = self.updates_momentum(cost, eta)
-        
-        #print(updates[0][0].eval())
-        #print(updates)
+        if self.momentum:
+            updates = self.gradient_updates_momentum(cost, eta)
+        else:
+            grads = T.grad(cost, self.params)
+            updates = [(param, param-eta*grad) for param, grad in zip(self.params, grads)]
 
         # define functions to train a mini-batch, and to compute the
         # accuracy in validation and test mini-batches.
         i = T.lscalar() # mini-batch index
         train_mb = theano.function(
-            [i], cost, updates=updates, 
+            [i], cost, updates=updates,
             givens={
                 self.x:
                 training_x[i*self.mini_batch_size: (i+1)*self.mini_batch_size],
@@ -159,7 +146,6 @@ class Network():
                 training_y[i*self.mini_batch_size: (i+1)*self.mini_batch_size]
             })
       
-    
         test_mb_accuracy = theano.function(
             [i], self.layers[-1].accuracy(self.y),
             givens={
@@ -173,9 +159,7 @@ class Network():
         best_accuracy = 0.0
         for epoch in range(epochs):
             for minibatch_index in range(num_training_batches):
-                train_mb(minibatch_index)# input index i output cost
-                
-              
+                train_mb(minibatch_index)
                 
             if test_data:                    
                 test_accuracy = np.mean(
@@ -200,7 +184,7 @@ class FullyConnectedLayer():
         self.n_in = n_in
         self.n_out = n_out
         self.activation_fn = activation_fn
-        self.dp = 0.5 # 0.2, 0.3, 0.4
+        
         # Initialize weights and biases
         self.w = theano.shared(
             np.asarray(
@@ -209,17 +193,11 @@ class FullyConnectedLayer():
                     # loc=0.0, scale=np.sqrt(1.0/n_out), size=(n_in, n_out)),
                 dtype=theano.config.floatX),
             name='w', borrow=True)
-                
         self.b = theano.shared(
             np.asarray(np.random.normal(loc=0.0, scale=1.0, size=(n_out,)),
                        dtype=theano.config.floatX),
             name='b', borrow=True)
-            
-        self.w =  theano.shared(self.w.eval() * np.random.binomial(1, self.dp, size = (n_in, n_out)) )
-        
-            
         self.params = [self.w, self.b]
-                
 
     def set_connection(self, inpt, mini_batch_size):
         # from input to output
