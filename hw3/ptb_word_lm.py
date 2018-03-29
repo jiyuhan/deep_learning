@@ -341,39 +341,264 @@ class SmallConfig():
     rnn_mode = BASIC
 
 
-class MediumConfig():
+class MediumConfig1():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig2():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig3():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig4():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig5():
     """Medium config."""
     init_scale = 0.05
     learning_rate = 1.0
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 650
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
-    keep_prob = 0.5
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig6():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig7():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+
+class LargeConfig8():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BASIC
+
+class MediumConfig9():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
+
+class MediumConfig10():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
+
+class MediumConfig11():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 1
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
     lr_decay = 0.8
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BLOCK
 
 
-class LargeConfig():
-    """Large config."""
-    init_scale = 0.04
+class MediumConfig12():
+    """Medium config."""
+    init_scale = 0.05
     learning_rate = 1.0
-    max_grad_norm = 10
-    num_layers = 2
+    max_grad_norm = 5
+    num_layers = 1
     num_steps = 35
-    hidden_size = 1500
-    max_epoch = 14
-    max_max_epoch = 55
-    keep_prob = 0.35
-    lr_decay = 1 / 1.15
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BLOCK
 
+class MediumConfig13():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
+
+
+class MediumConfig14():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 400
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
+
+class MediumConfig15():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 1.0
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
+
+class MediumConfig16():
+    """Medium config."""
+    init_scale = 0.05
+    learning_rate = 1.0
+    max_grad_norm = 5
+    num_layers = 2
+    num_steps = 35
+    hidden_size = 600
+    max_epoch = 6
+    max_max_epoch = 39
+    keep_prob = 0.7
+    lr_decay = 0.8
+    batch_size = 20
+    vocab_size = 10000
+    rnn_mode = BLOCK
 
 class TestConfig():
     """Tiny config, for testing."""
@@ -433,10 +658,42 @@ def get_config():
     config = None
     if FLAGS.model == "small":
         config = SmallConfig()
-    elif FLAGS.model == "medium":
-        config = MediumConfig()
-    elif FLAGS.model == "large":
-        config = LargeConfig()
+    elif FLAGS.model == "medium1":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium2":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium3":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium4":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium5":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium6":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium7":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium8":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium9":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium10":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium11":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium12":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium13":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium14":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium15":
+        config = MediumConfig1()
+    elif FLAGS.model == "medium16":
+        config = MediumConfig1()
+    
+    
+    # elif FLAGS.model == "large":
+    #     config = LargeConfig()
     elif FLAGS.model == "test":
         config = TestConfig()
     else:
@@ -462,82 +719,81 @@ def main(_):
 
     raw_data = reader.ptb_raw_data(FLAGS.data_path)
     train_data, valid_data, test_data, _ = raw_data
-    for test_datum in test_data:
-        print(test_datum)
-        config = get_config()
-        eval_config = get_config()
-        eval_config.batch_size = 1
-        eval_config.num_steps = 1
 
-        with tf.Graph().as_default():
-            initializer = tf.random_uniform_initializer(-config.init_scale,
-                                                        config.init_scale)
+    config = get_config()
+    eval_config = get_config()
+    eval_config.batch_size = 1
+    eval_config.num_steps = 1
 
-            with tf.name_scope("Train"):
-                train_input = PTBInput(
-                    config=config, data=train_data, name="TrainInput")
-                with tf.variable_scope("Model", reuse=None, initializer=initializer):
-                    m = PTBModel(is_training=True, config=config,
-                                input_=train_input)
-                tf.summary.scalar("Training_Loss", m.cost)
-                tf.summary.scalar("Learning_Rate", m.lr)
+    with tf.Graph().as_default():
+        initializer = tf.random_uniform_initializer(-config.init_scale,
+                                                    config.init_scale)
 
-            with tf.name_scope("Valid"):
-                valid_input = PTBInput(
-                    config=config, data=valid_data, name="ValidInput")
-                with tf.variable_scope("Model", reuse=True, initializer=initializer):
-                    mvalid = PTBModel(is_training=False,
-                                    config=config, input_=valid_input)
-                tf.summary.scalar("Validation_Loss", mvalid.cost)
+        with tf.name_scope("Train"):
+            train_input = PTBInput(
+                config=config, data=train_data, name="TrainInput")
+            with tf.variable_scope("Model", reuse=None, initializer=initializer):
+                m = PTBModel(is_training=True, config=config,
+                            input_=train_input)
+            tf.summary.scalar("Training_Loss", m.cost)
+            tf.summary.scalar("Learning_Rate", m.lr)
 
-            with tf.name_scope("Test"):
-                test_input = PTBInput(
-                    config=eval_config, data=test_datum, name="TestInput")
-                with tf.variable_scope("Model", reuse=True, initializer=initializer):
-                    mtest = PTBModel(is_training=False, config=eval_config,
-                                    input_=test_input)
+        with tf.name_scope("Valid"):
+            valid_input = PTBInput(
+                config=config, data=valid_data, name="ValidInput")
+            with tf.variable_scope("Model", reuse=True, initializer=initializer):
+                mvalid = PTBModel(is_training=False,
+                                config=config, input_=valid_input)
+            tf.summary.scalar("Validation_Loss", mvalid.cost)
 
-            models = {"Train": m, "Valid": mvalid, "Test": mtest}
-            for name, model in models.items():
-                model.export_ops(name)
-            metagraph = tf.train.export_meta_graph()
-            if tf.__version__ < "1.1.0" and FLAGS.num_gpus > 1:
-                raise ValueError("num_gpus > 1 is not supported for TensorFlow versions "
-                                "below 1.1.0")
-            soft_placement = False
-            if FLAGS.num_gpus > 1:
-                soft_placement = True
-                util.auto_parallel(metagraph, m)
+        with tf.name_scope("Test"):
+            test_input = PTBInput(
+                config=eval_config, data=test_data[0], name="TestInput")
+            with tf.variable_scope("Model", reuse=True, initializer=initializer):
+                mtest = PTBModel(is_training=False, config=eval_config,
+                                input_=test_input)
 
-        with tf.Graph().as_default():
-            tf.train.import_meta_graph(metagraph)
-            for model in models.values():
-                model.import_ops()
-            sv = tf.train.Supervisor(logdir=FLAGS.save_path)
-            config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
-            with sv.managed_session(config=config_proto) as session:
-                for i in range(config.max_max_epoch):
-                    lr_decay = config.lr_decay ** max(i +
-                                                    1 - config.max_epoch, 0.0)
-                    m.assign_lr(session, config.learning_rate * lr_decay)
+        models = {"Train": m, "Valid": mvalid, "Test": mtest}
+        for name, model in models.items():
+            model.export_ops(name)
+        metagraph = tf.train.export_meta_graph()
+        if tf.__version__ < "1.1.0" and FLAGS.num_gpus > 1:
+            raise ValueError("num_gpus > 1 is not supported for TensorFlow versions "
+                            "below 1.1.0")
+        soft_placement = False
+        if FLAGS.num_gpus > 1:
+            soft_placement = True
+            util.auto_parallel(metagraph, m)
 
-                    print("Epoch: %d Learning rate: %.3f" %
-                        (i + 1, session.run(m.lr)))
-                    train_perplexity = run_epoch(session, m, eval_op=m.train_op,
-                                                verbose=True)
-                    print("Epoch: %d Train Perplexity: %.3f" %
-                        (i + 1, train_perplexity))
-                    valid_perplexity = run_epoch(session, mvalid)
-                    print("Epoch: %d Valid Perplexity: %.3f" %
-                        (i + 1, valid_perplexity))
+    with tf.Graph().as_default():
+        tf.train.import_meta_graph(metagraph)
+        for model in models.values():
+            model.import_ops()
+        sv = tf.train.Supervisor(logdir=FLAGS.save_path)
+        config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
+        with sv.managed_session(config=config_proto) as session:
+            for i in range(config.max_max_epoch):
+                lr_decay = config.lr_decay ** max(i +
+                                                1 - config.max_epoch, 0.0)
+                m.assign_lr(session, config.learning_rate * lr_decay)
 
-                test_perplexity = run_epoch(session, mtest)
-                print("Test Perplexity: %.3f" % test_perplexity)
+                print("Epoch: %d Learning rate: %.3f" %
+                    (i + 1, session.run(m.lr)))
+                train_perplexity = run_epoch(session, m, eval_op=m.train_op,
+                                            verbose=True)
+                print("Epoch: %d Train Perplexity: %.3f" %
+                    (i + 1, train_perplexity))
+                valid_perplexity = run_epoch(session, mvalid)
+                print("Epoch: %d Valid Perplexity: %.3f" %
+                    (i + 1, valid_perplexity))
 
-                if FLAGS.save_path:
-                    print("Saving model to %s." % FLAGS.save_path)
-                    sv.saver.save(session, FLAGS.save_path,
-                                global_step=sv.global_step)
+            test_perplexity = run_epoch(session, mtest)
+            print("Test Perplexity: %.3f" % test_perplexity)
+
+            if FLAGS.save_path:
+                print("Saving model to %s." % FLAGS.save_path)
+                sv.saver.save(session, FLAGS.save_path,
+                            global_step=sv.global_step)
 
 
 if __name__ == "__main__":
