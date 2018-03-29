@@ -60,6 +60,7 @@ from __future__ import division
 from __future__ import print_function
 
 import time
+import sys
 
 import numpy as np
 import tensorflow as tf
@@ -69,6 +70,11 @@ import util
 
 from tensorflow.python.client import device_lib
 
+if(len(sys.argv) is not 2):
+    raise ValueError('THOMAS HAN to TA: please use it as: python ptb_word_lm.py medium1.\n\
+            there are sixteen options from medium 1 to medium16')
+
+print(sys.argv[1])
 BASIC = "basic"
 CUDNN = "cudnn"
 BLOCK = "block"
@@ -77,7 +83,7 @@ flags = tf.flags
 logging = tf.logging
 
 flags.DEFINE_string(
-    "model", "small",
+    "model", sys.argv[1],
     "A type of model. Possible options are: small, medium, large.")
 flags.DEFINE_string("data_path", "simple-examples/data/",
                     "Where the training/test data is stored.")
@@ -94,6 +100,8 @@ flags.DEFINE_string("rnn_mode", BASIC,
                     "BASIC, and BLOCK, representing cudnn_lstm, basic_lstm, "
                     "and lstm_block_cell classes.")
 FLAGS = flags.FLAGS
+
+print(FLAGS.model)
 
 
 def data_type():
@@ -357,6 +365,7 @@ class MediumConfig1():
     vocab_size = 10000
     rnn_mode = BASIC
 
+
 class MediumConfig2():
     """Medium config."""
     init_scale = 0.05
@@ -372,6 +381,7 @@ class MediumConfig2():
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BASIC
+
 
 class MediumConfig3():
     """Medium config."""
@@ -389,6 +399,7 @@ class MediumConfig3():
     vocab_size = 10000
     rnn_mode = BASIC
 
+
 class MediumConfig4():
     """Medium config."""
     init_scale = 0.05
@@ -404,6 +415,7 @@ class MediumConfig4():
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BASIC
+
 
 class MediumConfig5():
     """Medium config."""
@@ -421,6 +433,7 @@ class MediumConfig5():
     vocab_size = 10000
     rnn_mode = BASIC
 
+
 class MediumConfig6():
     """Medium config."""
     init_scale = 0.05
@@ -436,6 +449,7 @@ class MediumConfig6():
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BASIC
+
 
 class MediumConfig7():
     """Medium config."""
@@ -470,6 +484,7 @@ class LargeConfig8():
     vocab_size = 10000
     rnn_mode = BASIC
 
+
 class MediumConfig9():
     """Medium config."""
     init_scale = 0.05
@@ -486,6 +501,7 @@ class MediumConfig9():
     vocab_size = 10000
     rnn_mode = BLOCK
 
+
 class MediumConfig10():
     """Medium config."""
     init_scale = 0.05
@@ -501,6 +517,7 @@ class MediumConfig10():
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BLOCK
+
 
 class MediumConfig11():
     """Medium config."""
@@ -535,6 +552,7 @@ class MediumConfig12():
     vocab_size = 10000
     rnn_mode = BLOCK
 
+
 class MediumConfig13():
     """Medium config."""
     init_scale = 0.05
@@ -568,6 +586,7 @@ class MediumConfig14():
     vocab_size = 10000
     rnn_mode = BLOCK
 
+
 class MediumConfig15():
     """Medium config."""
     init_scale = 0.05
@@ -584,6 +603,7 @@ class MediumConfig15():
     vocab_size = 10000
     rnn_mode = BLOCK
 
+
 class MediumConfig16():
     """Medium config."""
     init_scale = 0.05
@@ -599,6 +619,7 @@ class MediumConfig16():
     batch_size = 20
     vocab_size = 10000
     rnn_mode = BLOCK
+
 
 class TestConfig():
     """Tiny config, for testing."""
@@ -653,6 +674,53 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     return np.exp(costs / iters)
 
 
+def run_eopch_test(session, model, eval_op=None, verbose=False):
+    #start_time = time.time()
+    #logits = 0.0
+    count_of_hit = 0
+    count_of_miss = 0
+    #logitsList = []
+    #inputTargets = ''
+    #inputTargetsList = []
+    state = session.run(model.initial_state)
+
+    fetches = {
+        "logits": model.logits,
+        "input_targets": model.input.targets,
+        "hit_and_miss": model.hit_and_miss,
+        "final_state": model.final_state,
+        "predict": model.predict,
+    }
+
+    if eval_op is not None:
+        fetches["eval_op"] = eval_op
+
+    for step in range(model.input.epoch_size):
+        feed_dict = {}
+        for i, (c, h) in enumerate(model.initial_state):
+            feed_dict[c] = state[i].c
+            feed_dict[h] = state[i].h
+
+        vals = session.run(fetches, feed_dict)
+
+        h_m = vals["hit_and_miss"]
+        print(h_m)
+
+        if h_m[0]:
+            count_of_hit += 1
+        else:
+            count_of_miss += 1
+
+        predict = vals["predict"]
+        print(predict)
+
+        print(vals["input_targets"][0][0])
+
+        #logits = vals["logits"]
+
+    return (count_of_hit, count_of_miss)
+
+
 def get_config():
     """Get model config."""
     config = None
@@ -690,8 +758,7 @@ def get_config():
         config = MediumConfig1()
     elif FLAGS.model == "medium16":
         config = MediumConfig1()
-    
-    
+
     # elif FLAGS.model == "large":
     #     config = LargeConfig()
     elif FLAGS.model == "test":
@@ -734,7 +801,7 @@ def main(_):
                 config=config, data=train_data, name="TrainInput")
             with tf.variable_scope("Model", reuse=None, initializer=initializer):
                 m = PTBModel(is_training=True, config=config,
-                            input_=train_input)
+                             input_=train_input)
             tf.summary.scalar("Training_Loss", m.cost)
             tf.summary.scalar("Learning_Rate", m.lr)
 
@@ -743,7 +810,7 @@ def main(_):
                 config=config, data=valid_data, name="ValidInput")
             with tf.variable_scope("Model", reuse=True, initializer=initializer):
                 mvalid = PTBModel(is_training=False,
-                                config=config, input_=valid_input)
+                                  config=config, input_=valid_input)
             tf.summary.scalar("Validation_Loss", mvalid.cost)
 
         with tf.name_scope("Test"):
@@ -751,7 +818,7 @@ def main(_):
                 config=eval_config, data=test_data[0], name="TestInput")
             with tf.variable_scope("Model", reuse=True, initializer=initializer):
                 mtest = PTBModel(is_training=False, config=eval_config,
-                                input_=test_input)
+                                 input_=test_input)
 
         models = {"Train": m, "Valid": mvalid, "Test": mtest}
         for name, model in models.items():
@@ -759,7 +826,7 @@ def main(_):
         metagraph = tf.train.export_meta_graph()
         if tf.__version__ < "1.1.0" and FLAGS.num_gpus > 1:
             raise ValueError("num_gpus > 1 is not supported for TensorFlow versions "
-                            "below 1.1.0")
+                             "below 1.1.0")
         soft_placement = False
         if FLAGS.num_gpus > 1:
             soft_placement = True
@@ -774,26 +841,33 @@ def main(_):
         with sv.managed_session(config=config_proto) as session:
             for i in range(config.max_max_epoch):
                 lr_decay = config.lr_decay ** max(i +
-                                                1 - config.max_epoch, 0.0)
+                                                  1 - config.max_epoch, 0.0)
                 m.assign_lr(session, config.learning_rate * lr_decay)
 
                 print("Epoch: %d Learning rate: %.3f" %
-                    (i + 1, session.run(m.lr)))
+                      (i + 1, session.run(m.lr)))
                 train_perplexity = run_epoch(session, m, eval_op=m.train_op,
-                                            verbose=True)
+                                             verbose=True)
                 print("Epoch: %d Train Perplexity: %.3f" %
-                    (i + 1, train_perplexity))
+                      (i + 1, train_perplexity))
                 valid_perplexity = run_epoch(session, mvalid)
                 print("Epoch: %d Valid Perplexity: %.3f" %
-                    (i + 1, valid_perplexity))
+                      (i + 1, valid_perplexity))
 
             test_perplexity = run_epoch(session, mtest)
             print("Test Perplexity: %.3f" % test_perplexity)
-
+            run_eopch_test_logit = run_eopch_test(session, mtest)
+            my_file = open(sys.argv[1] + '.txt', 'w')
+            my_file.write("the count of hit: %d" % run_eopch_test_logit[0])
+            my_file.write("the count of miss: %d" % run_eopch_test_logit[1])
+            my_file.close()
+            
+            print("the count of hit: %d" % run_eopch_test_logit[0])
+            print("the count of miss: %d" % run_eopch_test_logit[1])
             if FLAGS.save_path:
                 print("Saving model to %s." % FLAGS.save_path)
                 sv.saver.save(session, FLAGS.save_path,
-                            global_step=sv.global_step)
+                              global_step=sv.global_step)
 
 
 if __name__ == "__main__":
