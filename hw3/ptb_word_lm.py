@@ -65,6 +65,8 @@ import sys
 import numpy as np
 import tensorflow as tf
 
+import configs
+
 import reader
 import util
 
@@ -331,313 +333,6 @@ class PTBModel():
     def final_state_name(self):
         return self._final_state_name
 
-
-class SmallConfig():
-    """Small config."""
-    init_scale = 0.1
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 20
-    hidden_size = 200
-    max_epoch = 3
-    max_max_epoch = 9
-    keep_prob = 1.0
-    lr_decay = 0.5
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig1():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig2():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig3():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig4():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig5():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig6():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig7():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class LargeConfig8():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BASIC
-
-
-class MediumConfig9():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig10():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig11():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig12():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 1
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig13():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig14():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 400
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig15():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 1.0
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class MediumConfig16():
-    """Medium config."""
-    init_scale = 0.05
-    learning_rate = 1.0
-    max_grad_norm = 5
-    num_layers = 2
-    num_steps = 35
-    hidden_size = 600
-    max_epoch = 6
-    max_max_epoch = 39
-    keep_prob = 0.7
-    lr_decay = 0.8
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
-class TestConfig():
-    """Tiny config, for testing."""
-    init_scale = 0.1
-    learning_rate = 1.0
-    max_grad_norm = 1
-    num_layers = 1
-    num_steps = 2
-    hidden_size = 2
-    max_epoch = 1
-    max_max_epoch = 1
-    keep_prob = 1.0
-    lr_decay = 0.5
-    batch_size = 20
-    vocab_size = 10000
-    rnn_mode = BLOCK
-
-
 def run_epoch(session, model, eval_op=None, verbose=False):
     """Runs the model on the given data."""
     start_time = time.time()
@@ -725,44 +420,76 @@ def get_config():
     """Get model config."""
     config = None
     if FLAGS.model == "small":
-        config = SmallConfig()
+        config = configs.SmallConfig()
     elif FLAGS.model == "medium1":
-        config = MediumConfig1()
+        config = configs.MediumConfig1()
     elif FLAGS.model == "medium2":
-        config = MediumConfig1()
+        config = configs.MediumConfig2()
     elif FLAGS.model == "medium3":
-        config = MediumConfig1()
+        config = configs.MediumConfig3()
     elif FLAGS.model == "medium4":
-        config = MediumConfig1()
+        config = configs.MediumConfig4()
     elif FLAGS.model == "medium5":
-        config = MediumConfig1()
+        config = configs.MediumConfig5()
     elif FLAGS.model == "medium6":
-        config = MediumConfig1()
+        config = configs.MediumConfig6()
     elif FLAGS.model == "medium7":
-        config = MediumConfig1()
+        config = configs.MediumConfig7()
     elif FLAGS.model == "medium8":
-        config = MediumConfig1()
+        config = configs.MediumConfig8()
     elif FLAGS.model == "medium9":
-        config = MediumConfig1()
+        config = configs.MediumConfig9()
     elif FLAGS.model == "medium10":
-        config = MediumConfig1()
+        config = configs.MediumConfig10()
     elif FLAGS.model == "medium11":
-        config = MediumConfig1()
+        config = configs.MediumConfig11()
     elif FLAGS.model == "medium12":
-        config = MediumConfig1()
+        config = configs.MediumConfig12()
     elif FLAGS.model == "medium13":
-        config = MediumConfig1()
+        config = configs.MediumConfig13()
     elif FLAGS.model == "medium14":
-        config = MediumConfig1()
+        config = configs.MediumConfig14()
     elif FLAGS.model == "medium15":
-        config = MediumConfig1()
+        config = configs.MediumConfig15()
     elif FLAGS.model == "medium16":
-        config = MediumConfig1()
+        config = configs.MediumConfig16()
+    elif FLAGS.model == "small1":
+        config = configs.SmallConfig1()
+    elif FLAGS.model == "small2":
+        config = configs.SmallConfig2()
+    elif FLAGS.model == "small3":
+        config = configs.SmallConfig3()
+    elif FLAGS.model == "small4":
+        config = configs.SmallConfig4()
+    elif FLAGS.model == "small5":
+        config = configs.SmallConfig5()
+    elif FLAGS.model == "small6":
+        config = configs.SmallConfig6()
+    elif FLAGS.model == "small7":
+        config = configs.SmallConfig7()
+    elif FLAGS.model == "small8":
+        config = configs.SmallConfig8()
+    elif FLAGS.model == "small9":
+        config = configs.SmallConfig9()
+    elif FLAGS.model == "small10":
+        config = configs.SmallConfig10()
+    elif FLAGS.model == "small11":
+        config = configs.SmallConfig11()
+    elif FLAGS.model == "small12":
+        config = configs.SmallConfig12()
+    elif FLAGS.model == "small13":
+        config = configs.SmallConfig13()
+    elif FLAGS.model == "small14":
+        config = configs.SmallConfig14()
+    elif FLAGS.model == "small15":
+        config = configs.SmallConfig15()
+    elif FLAGS.model == "small16":
+        config = configs.SmallConfig16()
 
     # elif FLAGS.model == "large":
     #     config = LargeConfig()
     elif FLAGS.model == "test":
-        config = TestConfig()
+        config = configs.TestConfig()
     else:
         raise ValueError("Invalid model: %s", FLAGS.model)
     if FLAGS.rnn_mode:
