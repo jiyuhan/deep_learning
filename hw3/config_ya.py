@@ -24,7 +24,7 @@ class SmallConfig1():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -40,7 +40,7 @@ class SmallConfig2():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -56,7 +56,7 @@ class SmallConfig3():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -72,7 +72,7 @@ class SmallConfig4():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -88,7 +88,7 @@ class SmallConfig5():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -104,7 +104,7 @@ class SmallConfig6():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -120,7 +120,7 @@ class SmallConfig7():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -136,7 +136,7 @@ class SmallConfig8():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -152,7 +152,7 @@ class SmallConfig9():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -168,7 +168,7 @@ class SmallConfig10():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -184,7 +184,7 @@ class SmallConfig11():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -200,7 +200,7 @@ class SmallConfig12():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -216,7 +216,7 @@ class SmallConfig13():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -232,7 +232,7 @@ class SmallConfig14():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -248,7 +248,7 @@ class SmallConfig15():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 1.0
@@ -264,7 +264,7 @@ class SmallConfig16():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 20
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 3
     max_max_epoch = 3
     keep_prob = 0.7
@@ -280,7 +280,7 @@ class MediumConfig1():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -297,7 +297,7 @@ class MediumConfig2():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -314,7 +314,7 @@ class MediumConfig3():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -331,7 +331,7 @@ class MediumConfig4():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -348,7 +348,7 @@ class MediumConfig5():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -365,7 +365,7 @@ class MediumConfig6():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -382,7 +382,7 @@ class MediumConfig7():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -399,7 +399,7 @@ class MediumConfig8():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -416,7 +416,7 @@ class MediumConfig9():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -433,7 +433,7 @@ class MediumConfig10():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -450,7 +450,7 @@ class MediumConfig11():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -467,7 +467,7 @@ class MediumConfig12():
     max_grad_norm = 5
     num_layers = 1
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -484,7 +484,7 @@ class MediumConfig13():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -501,7 +501,7 @@ class MediumConfig14():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 200
+    hidden_size = 400
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7
@@ -518,7 +518,7 @@ class MediumConfig15():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 1.0
@@ -535,7 +535,7 @@ class MediumConfig16():
     max_grad_norm = 5
     num_layers = 2
     num_steps = 35
-    hidden_size = 300
+    hidden_size = 600
     max_epoch = 6
     max_max_epoch = 39
     keep_prob = 0.7

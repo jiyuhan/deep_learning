@@ -161,10 +161,17 @@ class PTBModel():
             average_across_timesteps=False,
             average_across_batch=True)
 
+        self._logits = logits
+        self._input.targets = input_.targets
         # Update the cost
         self._cost = tf.reduce_sum(loss)
         self._final_state = state
-
+        self.softmax_out = tf.nn.softmax(tf.reshape(logits, [-1, vocab_size]))
+        self.predict = tf.cast(tf.argmax(self.softmax_out, axis=1), tf.int32)
+        correct_prediction = tf.equal(
+            self.predict, tf.reshape(input_.targets, [-1]))
+        self._hit_and_miss = correct_prediction
+        self.accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
         if not is_training:
             return
 
@@ -263,7 +270,11 @@ class PTBModel():
     def export_ops(self, name):
         """Exports ops to collections."""
         self._name = name
-        ops = {util.with_prefix(self._name, "cost"): self._cost}
+        ops = {util.with_prefix(self._name, "cost"): self._cost,
+               util.with_prefix(self._name, "logits"): self._logits,
+               util.with_prefix(self._name, "input_targets"): self._input.targets,
+               util.with_prefix(self._name, "hit_and_miss"): self._hit_and_miss,
+               util.with_prefix(self._name, "predict"): self.predict, }
         if self._is_training:
             ops.update(lr=self._lr, new_lr=self._new_lr,
                        lr_update=self._lr_update)
@@ -295,6 +306,15 @@ class PTBModel():
                     tf.GraphKeys.SAVEABLE_OBJECTS, params_saveable)
         self._cost = tf.get_collection_ref(
             util.with_prefix(self._name, "cost"))[0]
+
+        self._logits = tf.get_collection_ref(
+            util.with_prefix(self._name, "logits"))[0]
+        self._input.targets = tf.get_collection_ref(
+            util.with_prefix(self._name, "input_targets"))[0]
+        self._hit_and_miss = tf.get_collection_ref(
+            util.with_prefix(self._name, "hit_and_miss"))[0]
+        self.predict = tf.get_collection_ref(
+            util.with_prefix(self._name, "predict"))[0]
         num_replicas = FLAGS.num_gpus if self._name == "Train" else 1
         self._initial_state = util.import_state_tuples(
             self._initial_state, self._initial_state_name, num_replicas)
@@ -318,6 +338,14 @@ class PTBModel():
         return self._final_state
 
     @property
+    def logits(self):
+        return self._logits
+
+    @property
+    def hit_and_miss(self):
+        return self._hit_and_miss
+
+    @property
     def lr(self):
         return self._lr
 
@@ -332,6 +360,7 @@ class PTBModel():
     @property
     def final_state_name(self):
         return self._final_state_name
+
 
 def run_epoch(session, model, eval_op=None, verbose=False):
     """Runs the model on the given data."""
@@ -369,11 +398,11 @@ def run_epoch(session, model, eval_op=None, verbose=False):
     return np.exp(costs / iters)
 
 
-def run_eopch_test(session, model, eval_op=None, verbose=False):
+def run_epoch_test(session, model, eval_op=None, verbose=False):
     #start_time = time.time()
     #logits = 0.0
-    count_of_hit = 0
-    count_of_miss = 0
+    hit_c = 0
+    miss_c = 0
     #logitsList = []
     #inputTargets = ''
     #inputTargetsList = []
@@ -402,9 +431,9 @@ def run_eopch_test(session, model, eval_op=None, verbose=False):
         print(h_m)
 
         if h_m[0]:
-            count_of_hit += 1
+            hit_c += 1
         else:
-            count_of_miss += 1
+            miss_c += 1
 
         predict = vals["predict"]
         print(predict)
@@ -413,7 +442,7 @@ def run_eopch_test(session, model, eval_op=None, verbose=False):
 
         #logits = vals["logits"]
 
-    return (count_of_hit, count_of_miss)
+    return (hit_c, miss_c)
 
 
 def get_config():
@@ -583,14 +612,14 @@ def main(_):
 
             test_perplexity = run_epoch(session, mtest)
             print("Test Perplexity: %.3f" % test_perplexity)
-            run_eopch_test_logit = run_eopch_test(session, mtest)
+            run_epoch_test_result = run_epoch_test(session, mtest)
             my_file = open(sys.argv[1] + '.txt', 'w')
-            my_file.write("the count of hit: %d" % run_eopch_test_logit[0])
-            my_file.write("the count of miss: %d" % run_eopch_test_logit[1])
+            my_file.write("the count of hit: %d\n" % run_epoch_test_result[0])
+            my_file.write("the count of miss: %d" % run_epoch_test_result[1])
             my_file.close()
-            
-            print("the count of hit: %d" % run_eopch_test_logit[0])
-            print("the count of miss: %d" % run_eopch_test_logit[1])
+
+            print("the count of hit: %d" % run_epoch_test_result[0])
+            print("the count of miss: %d" % run_epoch_test_result[1])
             if FLAGS.save_path:
                 print("Saving model to %s." % FLAGS.save_path)
                 sv.saver.save(session, FLAGS.save_path,
