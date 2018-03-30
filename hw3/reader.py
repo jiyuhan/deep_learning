@@ -91,6 +91,7 @@ def ptb_raw_data(data_path=None, num_steps=20):
   valid_data = _file_to_word_ids(valid_path, word_to_id)
   test_data = _file_sentences_to_word_ids(test_path, word_to_id, num_steps)
   vocabulary = len(word_to_id)
+  print(len(test_data))
   return train_data, valid_data, test_data, vocabulary
 
 
