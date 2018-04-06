@@ -1,107 +1,160 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div style="margin-top: 20px; margin-bottom:20px;" class="text-center"><h1>Project Proposal: Intelligent Transplants</h1></div>
-                <br>
-                <em>Everyday twenty-two people die waiting for a transplant. Around 65% of organs are rejected by centers while 10% of accepted organs are not used in transplants. Rejections occur due to low confidence from doctors about compatibility, time spent waiting for decisions being made, and human error. This $34B industry is missing many chances at saving lives and money. UNOS stores data for the thousands of transplants that occur and current medical charts have hundreds of data points on patients. This seemed like a perfect opportunity to let machines solve this problem.</em>
-                <hr>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="project-idea">
-                    <h3>Project Idea</h3>
-                    <br>
-                    <p>
-                        Use donor and recipient medical data with the outcome of the transplant and predicts the viability of a transplant succeeding. 
-                    </p>
-                </div>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="dataset-details">
-                    <h3>Dataset Details</h3>
-                    <br>
-                    <p>
-                        Most of the needed datasets are covered under HIPPA and deidentified data requires approval. We have applied to get access to the data from UNOS, Organ Procurement and Transplantation Network, and the Scientific Registry of Transplant Recipients. <br>
-                        We developed a synthetic dataset using the current stats available with these 8 fields:
-                        <br><br>id,dr,age,blood,gender,organ,ethnicity,bmi,lod,acceptance
-                    </p>
-                </div>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="software">
-                    <h3>Software</h3>
-                    <br>
-                    <p>
-                        Google Cloud Platform, Jupyter, TensorFlow
-                    </p>
-                </div>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="papars-to-read">
-                    <h3>Papers to read</h3>
-                    <br>
-                    <p>
-                        Dybowski, R., Gant, V., Weller, P., & Chang, R. (1996). Prediction of outcome in critically ill patients using artificial neural network synthesised by genetic algorithm. <em>The Lancet, 347(9009)</em>, 1146-1150.<br><br>
-                        Yoo, K. D., Noh, J., Lee, H., Kim, D. K., Lim, C. S., Kim, Y. H., ... & Kim, Y. S. (2017). A Machine Learning Approach Using Survival Statistics to Predict Graft Survival in Kidney Transplant Recipients: A Multicenter Cohort Study. <em>Scientific reports</em>, 7(1), 8904.<br><br>
-                        Reinaldo, F., Rahman, M. A., Alves, C. F., Malucelli, A., & Camacho, R. (2010, February). Machine Learning support for kidney transplantation decision making. In <em>Proceedings of the International Symposium on Biocomputing</em> (p. 48). ACM.<br><br>
-                            
-                    </p>
-                </div>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="teammember">
-                    <h3>Teammates</h3>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-3">
-                            <div class="thumbnail"><img src="https://avatars.githubusercontent.com/u/4543437?v=3?height=180&width=180"width="300"height="300">
-                                <div class="caption text-center">
-                                    Shahaed Hasan
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2"></div>
-                        <div class="col-md-3">
-                            <div class="thumbnail"><img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/23843387_1181522428649411_1215387715835660538_n.jpg?oh=41e738841321afb3435f0c8043f6b67e&oe=5B0B26BD"width="300"height="300">
-                                <div class="caption text-center">
-                                    Thomas Han
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                    </div>
-                </div>
-                <div style="margin-top: 20px; margin-bottom:20px;" id="milestones">
-                    <h3>Progress Milestones</h3>
-                    <br>
-                    <p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <em>March 19</em><br>
-                                <em>April 2</em><br>
-                                <em>April 9</em><br>
-                                <em>April 9 - April 23</em><br>
-                                <em>May 1</em><br>
-                            </div>
-                            <div class="col-md-6">
-                                Receive data and start preprocessing <br>
-                                Finish preprocessing  -- begin training the model <br>
-                                Train model -interpret initial results<br>
-                                Improve model, modify data, optimize prediction<br>
-                                Final Report<br>
-                            </div>
-                        </div>
-                        
-                    </p>
-                </div>
-                <footer class="text-center" style="margin-bottom:30px;">
-                    <hr>
-                    <p>Proposed and coded with love from Thomas and Shahaed.</p>
-                </footer>
-            </div>
-            <div class="col-md-2"></div>
-            
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Intelligent Transplant</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="progress_report.html">Progress</a>
+                </li>
+            </ul>
         </div>
-    </body>
+    </nav>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div style="margin-top: 20px; margin-bottom:20px;" class="text-center">
+                <h1>Project Proposal: Intelligent Transplants</h1>
+            </div>
+            <br>
+            <em>Everyday twenty-two people die waiting for a transplant. Around 65% of organs are rejected by centers while 10%
+                of accepted organs are not used in transplants. Rejections occur due to low confidence from doctors about
+                compatibility, time spent waiting for decisions being made, and human error. This $34B industry is missing
+                many chances at saving lives and money. UNOS stores data for the thousands of transplants that occur and
+                current medical charts have hundreds of data points on patients. This seemed like a perfect opportunity to
+                let machines solve this problem.</em>
+            <hr>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="project-idea">
+                <h3>Project Idea</h3>
+                <br>
+                <p>
+                    Use donor and recipient medical data with the outcome of the transplant and predicts the viability of a transplant succeeding.
+                </p>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="dataset-details">
+                <h3>Dataset Details</h3>
+                <br>
+                <p>
+                    Most of the needed datasets are covered under HIPPA and deidentified data requires approval. We have applied to get access
+                    to the data from UNOS, Organ Procurement and Transplantation Network, and the Scientific Registry of
+                    Transplant Recipients.
+                    <br> We developed a synthetic dataset using the current stats available with these 8 fields:
+                    <br>
+                    <br>id,dr,age,blood,gender,organ,ethnicity,bmi,lod,acceptance
+                </p>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="software">
+                <h3>Software</h3>
+                <br>
+                <p>
+                    Google Cloud Platform, Jupyter, TensorFlow
+                </p>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="papars-to-read">
+                <h3>Papers to read</h3>
+                <br>
+                <p>
+                    Dybowski, R., Gant, V., Weller, P., & Chang, R. (1996). Prediction of outcome in critically ill patients using artificial
+                    neural network synthesised by genetic algorithm.
+                    <em>The Lancet, 347(9009)</em>, 1146-1150.
+                    <br>
+                    <br> Yoo, K. D., Noh, J., Lee, H., Kim, D. K., Lim, C. S., Kim, Y. H., ... & Kim, Y. S. (2017). A Machine
+                    Learning Approach Using Survival Statistics to Predict Graft Survival in Kidney Transplant Recipients:
+                    A Multicenter Cohort Study.
+                    <em>Scientific reports</em>, 7(1), 8904.
+                    <br>
+                    <br> Reinaldo, F., Rahman, M. A., Alves, C. F., Malucelli, A., & Camacho, R. (2010, February). Machine Learning
+                    support for kidney transplantation decision making. In
+                    <em>Proceedings of the International Symposium on Biocomputing</em> (p. 48). ACM.
+                    <br>
+                    <br>
+
+                </p>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="teammember">
+                <h3>Teammates</h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://avatars.githubusercontent.com/u/4543437?v=3?height=180&width=180" width="300" height="300">
+                            <div class="caption text-center">
+                                Shahaed Hasan
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/23843387_1181522428649411_1215387715835660538_n.jpg?oh=41e738841321afb3435f0c8043f6b67e&oe=5B0B26BD"
+                                width="300" height="300">
+                            <div class="caption text-center">
+                                Thomas Han
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="milestones">
+                <h3>Progress Milestones</h3>
+                <br>
+                <p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <em>March 19</em>
+                            <br>
+                            <em>April 2</em>
+                            <br>
+                            <em>April 9</em>
+                            <br>
+                            <em>April 9 - April 23</em>
+                            <br>
+                            <em>May 1</em>
+                            <br>
+                        </div>
+                        <div class="col-md-6">
+                            Receive data and start preprocessing
+                            <br> Finish preprocessing -- begin training the model
+                            <br> Train model -interpret initial results
+                            <br> Improve model, modify data, optimize prediction
+                            <br> Final Report
+                            <br>
+                        </div>
+                    </div>
+
+                </p>
+            </div>
+            <footer class="text-center" style="margin-bottom:30px;">
+                <hr>
+                <p>Proposed and coded with love from Thomas and Shahaed.</p>
+            </footer>
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+</body>
+
 </html>

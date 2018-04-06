@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Intelligent Transplant</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="progress_report.html">Progress</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div style="margin-top: 20px; margin-bottom:20px;">
+                <h1>Progress Report</h1>
+            </div>
+            <br>
+            <em>Everyday twenty-two people die waiting for a transplant. Around 65% of organs are rejected by centers while 10%
+                of accepted organs are not used in transplants. Rejections occur due to low confidence from doctors about
+                compatibility, time spent waiting for decisions being made, and human error. This $34B industry is missing
+                many chances at saving lives and money. UNOS stores data for the thousands of transplants that occur and
+                current medical charts have hundreds of data points on patients. This seemed like a perfect opportunity to
+                let machines solve this problem.</em>
+            <hr>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="dataset-details">
+                <h3>Dataset Details</h3>
+                <br>
+                <p>
+                    The data we yielded from is <a href="d2.csv">here</a>.
+                </p>
+                <p>It contains category of the following:</p>
+                <p>id - <em>The id of each anonymous individual.</em></p>
+                <p>dr - <em></em></p>
+                <p>age - <em></em></p>
+                <p>blood - <em></em></p>
+                <p>gender - <em></em></p>
+                <p>organ - <em></em></p>
+                <p>ethnicity - <em>Their ethnicity. Category is <b>White, Asian, Black, and Hispanic</b></em></p>
+                <p>bmi - <em></em></p>
+                <p>lod - <em></em></p>
+                <p>acceptance - <em>If the organ is accepted. Category is <b>True or False</b></em></p>
+            </div>
+            <div style="margin-top: 20px; margin-bottom:20px;" id="software">
+                <h3>Software</h3>
+                <br>
+                <p>
+                    Google Cloud Platform, Jupyter, TensorFlow
+                </p>
+            </div>
+            <footer class="text-center" style="margin-bottom:30px;">
+                <hr>
+                <p>Proposed and coded with love from Thomas and Shahaed.</p>
+            </footer>
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+</body>
+
+</html>
