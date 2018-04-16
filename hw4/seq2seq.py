@@ -167,7 +167,7 @@ with tf.variable_scope('Seq2seq'):
     # Decoder: expected outputs
     expected_sparse_output = [
         tf.placeholder(tf.float32, shape=(None, output_dim),
-                       name="expected_sparse_output_".format(t))
+                       name="expected_sparse_output_{}".format(t))
         for t in range(seq_length)
     ]
 
@@ -256,7 +256,6 @@ def test_batch(batch_size):
     loss_t = sess.run([loss], feed_dict)
     return loss_t[0]
 
-
 # Training
 train_losses = []
 test_losses = []
@@ -337,7 +336,6 @@ print("Reminder: the signal can contain many dimensions at once.")
 print("In that case, signals have the same color.")
 print("In reality, we could imagine multiple stock market symbols evolving,")
 print("tied in time together and seen at once by the neural network.")
-
 
 # ## Author
 #
