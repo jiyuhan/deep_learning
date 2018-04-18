@@ -20,11 +20,12 @@ def should_buy(x0, x1, x2, x3, x4, x5):
         return False
 
 
-def should_sell(x0, x1, x2, x3, x4, x5):
+def buy_or_sell(x0, x1, x2, x3, x4, x5):
     if x0 > (x1+x2)/2 > (x3+x4)/2 > x5:
-        return True
-    else:
-        return False
+        return 0 # sell
+    elif x0 < (x1+x2)/2 < (x3+x4)/2 < x5:
+        return 1 # buy
+    return 2
 
 
 def buy_order(cash, shares, price):
@@ -53,6 +54,7 @@ def predict_five_day(x0_actual, x1_actual, x2_actual, x3_actual, x4_actual, x5_a
 
     # j is how many predictions we are making
     # in our case, we are predicting five days
+    # in its original use, every prediction plots a figure.
     for j in range(num_predictions):
         plt.figure(figsize=(12, 3))
 
