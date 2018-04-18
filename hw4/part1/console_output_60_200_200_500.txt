@@ -1,0 +1,334 @@
+X.shape = (1247, 60, 1) Y.shape = (1247, 60, 1)
+Dimensions of X and Y training examples: 
+  (seq_length, batch_size, output_dim) =  (60, 200, 1) (60, 200, 1)
+WARNING:tensorflow:From /home/thomas/.local/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+2018-04-18 17:45:25.659270: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Step 500/500, train loss: 104506.20,  	TEST loss: 2913437.2500
+Final train loss: 104506.203125, 	TEST loss: 2913437.25
+X.shape = (239, 60, 1) Y.shape = (239, 60, 1)
+shape of X (60, 239, 1)
+shape of Y (60, 239, 1)
+shape of predicted output:  (60, 239, 1)
+298
+298
+298
+watching
+placing sell order
+not enough shares to sell
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+placing buy order
+cash running low, not buying
+watching
+watching
+watching
+placing sell order
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+alas, the amount of cash at the end is: 109606.3
+the amount of shares I have is 2.0
+total amount of capitals I own at current fair market price is:  110125.74
+Reminder: the signal can contain many dimensions at once.
+In that case, signals have the same color.
+In reality, we could imagine multiple stock market symbols evolving,
+tied in time together and seen at once by the neural network.

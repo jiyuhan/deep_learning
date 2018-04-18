@@ -113,14 +113,14 @@ to_predict = 5
 # Configuration of Optmizer:
 learning_rate = 0.001  # Small lr helps not to diverge during training.
 # How many times we perform a training step (therefore how many times we show a batch).
-num_iters = 10
+num_iters = 500
 lr_decay = 0.92  # default: 0.9 . Simulated annealing.
 momentum = 0.5  # default: 0.0 . Momentum technique in weights update
 lambda_l2_reg = 0.003  # L2 regularization of weights - avoids overfitting
-batch_size = 10  # Low value used for live demo purposes - 100 and 1000 would be possible too, crank that up!
+batch_size = 500  # Low value used for live demo purposes - 100 and 1000 would be possible too, crank that up!
 
 # Neural network parameters
-hidden_dim = 20  # Count of hidden neurons in the recurrent units.
+hidden_dim = 200  # Count of hidden neurons in the recurrent units.
 # Number of stacked recurrent cells, on the neural depth axis.
 layers_stacked_count = 2
 

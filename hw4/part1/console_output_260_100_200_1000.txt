@@ -1,0 +1,361 @@
+========================
+config
+seq_length 260
+batch_size 100
+hidden_dims 200
+iteration 1000
+
+========================
+
+X.shape = (1047, 260, 1) Y.shape = (1047, 260, 1)
+Dimensions of X and Y training examples: 
+  (seq_length, batch_size, output_dim) =  (260, 100, 1) (260, 100, 1)
+WARNING:tensorflow:From /home/thomas/.local/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+2018-04-18 17:09:39.084262: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Step 1000/1000, train loss: 564520.62, 	TEST loss: 2114698.0000
+Final train loss: 564520.625, 	TEST loss: 2114698.0
+X.shape = (39, 260, 1) Y.shape = (39, 260, 1)
+shape of X (260, 39, 1)
+shape of Y (260, 39, 1)
+shape of predicted output:  (260, 39, 1)
+298
+298
+298
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+placing sell order
+not enough shares to sell
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+alas, the amount of cash at the end is: 100000
+the amount of shares I have is 0
+total amount of capitals I own at current fair market price is:  100000.0
+Reminder: the signal can contain many dimensions at once.
+In that case, signals have the same color.
+In reality, we could imagine multiple stock market symbols evolving,
+tied in time together and seen at once by the neural network.

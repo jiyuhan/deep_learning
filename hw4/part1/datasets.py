@@ -348,7 +348,7 @@ def generate_x_y_data_v5(isTest, batch_size, predict_days, load_purpose=0):
     # print("Standard & Poors 500 Index ETF Trust")
     # step_length is the number for encoder and decoder's backpropagation.
     # A small number is used for demo.
-    seq_length = 260
+    seq_length = 60
     global Y_train
     global X_train
     global X_test
