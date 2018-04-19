@@ -117,7 +117,7 @@ num_iters = 500
 lr_decay = 0.92  # default: 0.9 . Simulated annealing.
 momentum = 0.5  # default: 0.0 . Momentum technique in weights update
 lambda_l2_reg = 0.003  # L2 regularization of weights - avoids overfitting
-batch_size = 500  # Low value used for live demo purposes - 100 and 1000 would be possible too, crank that up!
+batch_size = 200  # Low value used for live demo purposes - 100 and 1000 would be possible too, crank that up!
 
 # Neural network parameters
 hidden_dim = 200  # Count of hidden neurons in the recurrent units.
