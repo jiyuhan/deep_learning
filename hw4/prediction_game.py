@@ -1,3 +1,10 @@
+"""
+    Thomas Han
+    some code I wrote that may be used later,
+    HIGHLY experimental, you can pretty much
+    expect nothing works
+"""
+
 import sys
 import matplotlib.pyplot as plt
 from datasets import generate_x_y_data_v5
