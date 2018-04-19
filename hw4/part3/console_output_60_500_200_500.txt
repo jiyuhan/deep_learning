@@ -1,0 +1,349 @@
+Loading successful: data.shape = (1308, 5)
+X.shape = (1247, 60, 1) Y.shape = (1247, 60, 1)
+Dimensions of X and Y training examples: 
+  (seq_length, batch_size, output_dim) =  (60, 500, 1) (60, 500, 1)
+WARNING:tensorflow:From /home/thomas/.local/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+2018-04-18 19:43:17.271387: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Step 500/500, train loss: 184262.23,  	TEST loss: 6548904.5000
+Final train loss: 184262.234375, 	TEST loss: 6548904.5
+Loading successful: data.shape = (301, 5)
+X.shape = (240, 60, 1) Y.shape = (240, 60, 1)
+shape of X (60, 240, 1)
+shape of Y (60, 240, 1)
+shape of predicted output:  (60, 240, 1)
+299
+299
+299
+watching
+watching
+watching
+placing buy order
+placing buy order
+watching
+placing buy order
+watching
+watching
+watching
+watching
+placing buy order
+placing buy order
+placing buy order
+watching
+watching
+placing buy order
+watching
+watching
+placing buy order
+placing buy order
+placing buy order
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+watching
+watching
+watching
+watching
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+watching
+watching
+watching
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+placing buy order
+cash running low, not buying
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+placing sell order
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+watching
+alas, the amount of cash at the end is: 111096.66999999998
+the amount of shares I have is 8.0
+total amount of capitals I own at current fair market price is:  113182.82999999999
