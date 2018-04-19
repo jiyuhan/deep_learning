@@ -156,9 +156,9 @@ def test_batch(batch_size):
 
 
 def buy_or_sell(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9):
-    if x0 > (x1+x2)/2 and (x1+x2)/2 > (x3+x4)/2 and (x3+x4)/2 > (x5 + x6)/2 and (x7+x8)/2 > x9:
+    if x0 > (x1+x2)/2 and (x1+x2)/2 > (x3+x4)/2 and (x3+x4)/2 > (x5 + x6)/2 and (x5 + x6)/2 > (x7+x8)/2 and (x7+x8)/2 > x9:
         return 0  # sell
-    elif x0 < (x1+x2)/2 and (x1+x2)/2 < (x3+x4)/2 and (x3+x4)/2 < (x5 + x6)/2 and (x7+x8)/2 < x9:
+    elif x0 < (x1+x2)/2 and (x1+x2)/2 < (x3+x4)/2 and (x3+x4)/2 < (x5 + x6)/2 and (x5 + x6)/2 < (x7+x8)/2 and (x7+x8)/2 < x9:
         return 1  # buy
     return 2
 

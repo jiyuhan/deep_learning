@@ -1,95 +1,6 @@
+from datasets import generate_x_y_data_v5
 
-# coding: utf-8
-
-# # Sequence to Sequence (seq2seq) Recurrent Neural Network (RNN) for Time Series Prediction
-#
-# The goal of this project of mine is to bring users to try and experiment with the seq2seq neural network architecture. This is done by solving different simple toy problems about signal prediction. Normally, seq2seq architectures may be used for other more sophisticated purposes than for signal prediction, let's say, language modeling, but this project is an interesting tutorial in order to then get to more complicated stuff.
-#
-# In this project are given 4 exercises of gradually increasing difficulty. I take for granted that the public already have at least knowledge of basic RNNs and how can they be shaped into an encoder and a decoder of the most simple form (without attention). To learn more about RNNs in TensorFlow, you may want to visit this other project of mine about that: https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition
-#
-# The current project is a series of example I have first built in French, but I haven't got the time to generate all the charts anew with proper English text. I have built this project for the practical part of the third hour of a "master class" conference that I gave at the WAQ (Web At Quebec) in March 2017:
-# https://webaquebec.org/classes-de-maitre/deep-learning-avec-tensorflow
-#
-# You can find the French, original, version of this project in the French Git branch: https://github.com/guillaume-chevalier/seq2seq-signal-prediction/tree/francais
-#
-# ## How to use this ".ipynb" Python notebook ?
-#
-# Except the fact I made available an ".py" Python version of this tutorial within the repository, it is more convenient to run the code inside the notebook. The ".py" code exported feels a bit raw as an exportation.
-#
-# To run the notebook, you must have installed Jupyter Notebook or iPython Notebook. To open the notebook, you must write `jupyter notebook` or `iPython notebook` in command line (from the folder containing the notebook once downloaded, or a parent folder). It is then that the notebook application (IDE) will open in your browser as a local server and it will be possible to open the `.ipynb` notebook file and to run code cells with `CTRL+ENTER` and `SHIFT+ENTER`, it is also possible to restart the kernel and run all cells at once with the menus. Note that this is interesting since it is possible to make that IDE run as hosted on a cloud server with a lot of GPU power while you code through the browser.
-#
-# ## Exercises
-#
-# Note that the dataset changes in function of the exercice. Most of the time, you will have to edit the neural networks' training parameter to succeed in doing the exercise, but at a certain point, changes in the architecture itself will be asked and required. The datasets used for this exercises are found in `datasets.py`.
-#
-# ### Exercise 1
-#
-# In theory, it is possible to create a perfect prediction of the signal for this exercise. The neural network's parameters has been set to acceptable values for a first training, so you may pass this exercise by running the code without even a change. Your first training might get predictions like that (in yellow), but it is possible to do a lot better with proper parameters adjustments.
-#
-# Note: the neural network sees only what is to the left of the chart and is trained to predict what is at the right (predictions in yellow).
-#
-# We have 2 time series at once to predict, which are tied together. That means our neural network processes multidimensional data. A simple example would be to receive as an argument the past values of multiple stock market symbols in order to predict the future values of all those symbols with the neural network, which values are evolving together in time. That is what we will do in the exercise 6.
-#
-#
-# ### Exercise 2
-#
-# Here, rather than 2 signals in parallel to predict, we have only one, for simplicity. HOWEVER, this signal is a superposition of two sine waves of varying wavelenght and offset (and restricted to a particular min and max limit of wavelengts).
-#
-# In order to finish this exercise properly, you will need to edit the neural network's hyperparameters. As an example, here is what is possible to achieve as a predction with those better (but still unperfect) training hyperparameters:
-#
-# - `num_iters = 2500`
-# - `batch_size = 50`
-# - `hidden_dim = 35`
-# <img src="images/E2.png" />
-#
-# Note that it would be possible to obtain better results with a smaller neural network, provided better training hyperparameters and a longer training, adding dropout, and on.
-#
-# ### Exercise 3
-#
-# This exercise is similar to the previous one, except that the input data given to the encoder is noisy. The expected output is not noisy. This makes the task a bit harder.
-#
-# Therefore the neural network is brought to denoise the signal to interpret its future smooth values.
-#
-# Similarly as I said for the exercise 2, it would be possible here too to obtain better results. Note that it would also have been possible to ask you to predict to reconstruct the denoised signal from the noisy input (and not predict the future values of it). This would have been called a "denoising autoencoder", this type of architecture is also useful for data compression, such as manipulating images.
-#
-# ### Exercise 4
-#
-# This exercise is much harder than the previous ones and is built more as a suggestion. It is to predict the future value of the Bitcoin's price. We have here some daily market data of the bitcoin's value, that is, BTC/USD and BTC/EUR. This is not enough to build a good predictor, at least having data precise at the minute level, or second level, would be more interesting. Here is a prediction made on the actual future values, the neural network has not been trained on the future values shown here and this is a legitimate prediction, given a well-enough model trained on the task:
-#
-# <img src="images/E5.png" />
-#
-# Disclaimer: this prediction of the future values was really good and you should not expect predictions to be always that good using as few data as actually (side note: the other prediction charts in this project are all "average" except this one). Your task for this exercise is to plug the model on more valuable financial data in order to make more accurate predictions. Let me remind you that I provided the code for the datasets in "datasets.py", but that should be replaced for predicting accurately the Bitcoin.
-#
-# It would be possible to improve the input dimensions of your model that accepts (BTC/USD and BTC/EUR). As an example, you could create additionnal input dimensions/streams which could contain meteo data and more financial data, such as the S&P 500, the Dow Jones, and on. Other more creative input data could be sine waves (or other-type-shaped waves such as saw waves or triangles or two signals for `cos` and `sin`) representing the fluctuation of minutes, hours, days, weeks, months, years, moon cycles, and on. This could be combined with a Twitter sentiment analysis about the word "Bitcoin" in tweets in order to have another input signal which is more human-based and abstract. Actually, some libraries exists to convert text to a sentiment value, and there would also be the neural network end-to-end approach (but that would be a way more complicated setup). It is also interesting to know where is the bitcoin most used: http://images.google.com/search?tbm=isch&q=bitcoin+heatmap+world
-#
-# With all the above-mentionned examples, it would be possible to have all of this as input features, at every time steps: (BTC/USD, BTC/EUR, Dow_Jones, SP_500, hours, days, weeks, months, years, moons, meteo_USA, meteo_EUROPE, Twitter_sentiment). Finally, there could be those two output features, or more: (BTC/USD, BTC/EUR).
-#
-# This prediction concept can apply to many things, such as meteo prediction and other types of shot-term and mid-term statistical predictions.
-#
-# ## To change which exercise you are doing, change the value of the following "exercise" variable:
-#
-
-# In[1]:
-
-
-exercise = 5  # Possible values: 1, 2, 3, 4, or 5.
-
-from datasets import generate_x_y_data_v1, generate_x_y_data_v2, generate_x_y_data_v3, generate_x_y_data_v4, generate_x_y_data_v5
-
-# We choose which data function to use below, in function of the exericse.
-if exercise == 1:
-    generate_x_y_data = generate_x_y_data_v1
-if exercise == 2:
-    generate_x_y_data = generate_x_y_data_v2
-if exercise == 3:
-    generate_x_y_data = generate_x_y_data_v3
-if exercise == 4:
-    generate_x_y_data = generate_x_y_data_v4
-if exercise == 5:
-    generate_x_y_data = generate_x_y_data_v5
-
-
-# In[2]:
+generate_x_y_data = generate_x_y_data_v5
 
 
 import sys
@@ -97,15 +8,6 @@ import tensorflow as tf  # Version 1.0 or 0.12
 import numpy as np
 import matplotlib.pyplot as plt
 
-# This is for the notebook to generate inline matplotlib
-# charts rather than to open a new window every time:
-# get_ipython().magic('matplotlib inline')
-
-
-# ## Neural network's hyperparameters
-
-# In[3]:
-# Configuration of Prediction:
 num_predictions = 300
 predict_days = 1  # prediction in the next predict_days
 to_predict = 5
@@ -134,14 +36,6 @@ print("  (seq_length, batch_size, output_dim) = ",
 seq_length = sample_x.shape[0]  # Time series for backpropagation
 # Output dimension (e.g.: multiple signals at once, tied in time)
 output_dim = input_dim = sample_x.shape[-1]
-
-
-# ## Definition of the seq2seq neuronal architecture
-#
-# <img src="https://www.tensorflow.org/images/basic_seq2seq.png" />
-#
-# Comparatively to what we see in the image, our neural network deals with signal rather than letters. Also, we don't have the feedback mechanism yet.
-
 
 # Backward compatibility for TensorFlow's version 0.12:
 try:
@@ -413,35 +307,4 @@ def play_a_game(isTest=2):
             print('total amount of capitals I own at current fair market price is: ', cash + shares * x0_[i])
             break
 
-    # for j in range(X.shape[1]):
-    #     # for every prediction we need to decide to sell or to buy
-    #     for k in range(output_dim):
-    #         past = X[:, j, k]
-    #         past = past[:predict_days]  # only keep the past for predicted days
-    #         expected = Y[:to_predict, j, k]
-    #         pred = outputs[:to_predict, j, k]
-
-    #         print('past data: ', past)
-    #         print('expected data ', expected)
-    #         print('predicted data ', pred)
-
-
 play_a_game(isTest=2)
-
-print("Reminder: the signal can contain many dimensions at once.")
-print("In that case, signals have the same color.")
-print("In reality, we could imagine multiple stock market symbols evolving,")
-print("tied in time together and seen at once by the neural network.")
-
-
-# ## Author
-#
-# Guillaume Chevalier
-# - https://ca.linkedin.com/in/chevalierg
-# - https://twitter.com/guillaume_che
-# - https://github.com/guillaume-chevalier/
-#
-# ## License
-#
-# This project is free to use according to the [MIT License](https://github.com/guillaume-chevalier/seq2seq-signal-prediction/blob/master/LICENSE) as long as you cite me and the License (read the License for more details). You can cite me by pointing to the following link:
-# - https://github.com/guillaume-chevalier/seq2seq-signal-prediction
