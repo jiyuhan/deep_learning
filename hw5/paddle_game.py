@@ -29,10 +29,10 @@ class PaddleGame(object):
         # based on experimentation, the ball tends to move 4 times
         # between each paddle movement. Since here we alternate ball
         # and paddle movement, we make ball move 4x faster.
-        self.BALL_VELOCITY = 10
-        self.PADDLE_VELOCITY = 20
+        self.BALL_VELOCITY = 20
+        self.PADDLE_VELOCITY = 40
         self.FONT_SIZE = 30
-        self.MAX_TRIES_PER_GAME = 10 # max 34 for training
+        self.MAX_TRIES_PER_GAME = 100 # max 34 for training
         #self.MAX_TRIES_PER_GAME = 1  # for testing
         self.CUSTOM_EVENT = pygame.USEREVENT + 1
         self.font = pygame.font.SysFont("Comic Sans MS", self.FONT_SIZE)

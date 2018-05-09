@@ -1,23 +1,56 @@
 # -*- coding: utf-8 -*-
+
+# using Keras tl train a reinforcement learning model so it can play black-jack.
+
+# HOW TO TRAIN?
+# it seems like you are supposed to let the play plays with itself.
+# WITH WHAT DATA?
+# at winning, has reward, otherwise ends the game.
+
+# after the model is trained and saved in a h6 file.
+# play the game
+
+# stand
+# hit
+# double
+
 from __future__ import division, print_function
+###################################
+# of course, use Keras Sequential
 from keras.models import Sequential, load_model
 from keras.layers.core import Activation, Dense, Flatten
 from keras.layers.convolutional import Conv2D
 from keras.optimizers import Adam
+###################################
+# collections - high performance datatypes
+# so is numpy
 import collections
 import numpy as np
 import os
-
+###################################
+# import the paddle_game.py file
 import paddle_game
 
+
+"""
+This function reshapes a frame into an understandable form.
+"""
 def preprocess_frames(frames):
+    # frames.shape[0] is the number of frames in the "frames"
+    # if it's less than 4, it means there's only one frame
     if frames.shape[0] < 4:
-        # single frame
-        x_t = frames[0].astype("float")
-        x_t /= 80.0
+        # if it's a single frame, then
+        # print(frames)
+        # loads the first frame (even if there are multiple, only read the first)
+        x_t = frames[0].astype("float") # enforce strict type binding to float (casting)
+        x_t /= 80.0 # dunno why
+        # this makes the data becomes from 4 * (shape x * shape y) to (4 * shape x * shape y)
         s_t = np.stack((x_t, x_t, x_t, x_t), axis=1)
         # s_t.shape = (3, 4), duplicate x_t 4 times.
+    
+    # if it's not less than 4, it means it contains 4 frames by design
     else:
+        # print(frames)
         # 4 frames
         xt_list = []
         for i in range(4): # frames.shape[0]):
@@ -31,6 +64,9 @@ def preprocess_frames(frames):
     return s_t
 
 
+"""
+This function requests a batch and returns the batch
+"""
 def get_next_batch(experience, model, num_actions, gamma, batch_size):
     batch_indices = np.random.randint(low=0, high=len(experience),
                                       size=batch_size)
@@ -70,10 +106,14 @@ if __name__ == "__main__":
 
     modelFile = "rl-network.h6"
 
+    # loads the model if model exists, otherwise we train it.
     if os.path.exists(modelFile):
         model = load_model(os.path.join(DATA_DIR, modelFile))
     else:
         # build the model
+        # (3,  
+        #  4, -> (32 conv2d) -> (relu act'n) -> -> (64 conv2d) -> (relu act'n) -> (flatten) -> (512 dense) -> (relu) -> (3 dense)
+        #  1)
         model = Sequential()
         model.add(Conv2D(32, kernel_size=2, strides=1,
                  kernel_initializer="normal", 
