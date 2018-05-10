@@ -89,23 +89,33 @@ class Blackjack():
               str(self.total(self.player_hand)))
 
     def score(self, bet):
+        """
+        Is gonna score and tell if you won or lost
+        :param bet: the bet
+        :return: 1 for win, -1 for loss, 0 for tie
+        """
         self.print_results()
         playerval = self.total(self.player_hand)
         dealerval = self.total(self.dealer_hand)
         if playerval > 21:
             print("Sorry. You busted. You lose.\n")
             self.funds -= bet
+            return -1
         elif dealerval > 21:
             print("Dealer busts. You win!\n")
             self.funds += bet
+            return 1
         elif playerval < dealerval:
             print("Sorry. Your score is lower.\n")
             self.funds -= bet
+            return -1
         elif playerval > dealerval:
             print("Your score is higher. You win\n")
             self.funds += bet
+            return 1
         else:
             print("It's a tie\n")
+            return 0
 
     def reset(self):
         self.dealer_hand = self.deal()
@@ -120,30 +130,36 @@ class Blackjack():
         """
         return [self.total(self.dealer_hand), self.total(self.player_hand)]
 
-    def oneStep(self, act):  # act = 0 (stand); 1 (hit); 2 (double)
-        # When the cards have been dealt, roundEnd is zero.
-        # In between rounds, it is equal to one
-        if (act == 0):  # STAND
+
+
+    def oneStep(self, act):
+        """
+        Plays the game one step at a time! If you double, it's a hit then stand
+        :param act: 0 (stand); 1 (hit); 2 (double)
+        :return: current_state[dealer_hand, player_hand], reward: funds, game over? boolean,
+        won? 1 for win, -1 for loss, 0 for tie
+        """
+        if act == 0:  # STAND
             while self.total(self.dealer_hand) < 17:
                 self.hit(self.dealer_hand)
-            self.score(self.bet)
-            return self.current_state(), self.funds, self.game_over()
+            won = self.score(self.bet)
+            return self.current_state(), self.funds, True, won
 
-        elif (act == 1):  # HIT
+        elif act == 1:  # HIT
             self.hit(self.player_hand)
             if self.total(self.player_hand) > 21:
-                self.score(self.bet)
-                return self.current_state(), self.funds, self.game_over()
+                won = self.score(self.bet)
+                return self.current_state(), self.funds, True, won
             else:
-                return self.current_state(), self.funds, self.game_over()  # return state and the fact the game isn't over
+                return self.current_state(), self.funds, False  # return state and the fact the game isn't over
 
-        else:  # DOUBLE
+        elif act == 2:  # DOUBLE
             self.hit(self.player_hand)
             if self.total(self.player_hand) <= 21:
                 while self.total(self.dealer_hand) < 17:
                     self.hit(self.dealer_hand)
-            self.score(2 * self.bet)
-            return self.current_state(), self.funds, self.game_over()
+            won = self.score(2 * self.bet)
+            return self.current_state(), self.funds, True, won
 
 
     def random_game(self):
