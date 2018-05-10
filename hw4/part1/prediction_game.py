@@ -153,7 +153,7 @@ if __name__ == "__main__":
     import numpy as np
     import matplotlib.pyplot as plt
 
-    num_predictions = 300
+    num_predictions = 1000
     predict_days = 1
     to_predict = 5
 
@@ -162,9 +162,9 @@ if __name__ == "__main__":
     lr_decay = 0.92
     momentum = 0.5
     lambda_l2_reg = 0.003
-    batch_size = 200
+    batch_size = 500
 
-    hidden_dim = 200
+    hidden_dim = 1000
     layers_stacked_count = 2
 
     sample_x, sample_y = generate_x_y_data(
