@@ -41,60 +41,296 @@
                 <h1>Final Report</h1>
             </div>
             <br>
-            <em>Everyday twenty-two people die waiting for a transplant. Around 65% of organs are rejected by centers while 10%
-                of accepted organs are not used in transplants. Rejections occur due to low confidence from doctors about
-                compatibility, time spent waiting for decisions being made, and human error. This $34B industry is missing
-                many chances at saving lives and money. UNOS stores data for the thousands of transplants that occur and
-                current medical charts have hundreds of data points on patients. This seemed like a perfect opportunity to
-                let machines solve this problem.</em>
-            <hr>
+            <div id="Report">
+                <p class=MsoNormal>
+                    <b style='mso-bidi-font-weight:normal'>
+                        <span style='font-family:"Helvetica Neue";color:#44546A;mso-themecolor:text2'>Abstract</span>
+                    </b>
+                    <span style='font-family:"Helvetica Neue";color:#44546A;mso-themecolor:text2'>
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <i style='mso-bidi-font-style:normal'>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:"Times New Roman";
+                mso-bidi-font-family:"Times New Roman";color:#44546A;mso-themecolor:text2;
+                background:white'>Everyday twenty-two people die waiting for a transplant. Around 65% of organs are rejected by centers while 10% of
+                            accepted organs are not used in transplants. Rejections occur due to low confidence from doctors about compatibility,
+                            time spent waiting for decisions being made, and human error. This $34B industry is missing many chances at saving
+                            lives and money. UNOS stores data for the thousands of transplants that
+                            <span class=GramE>occur</span>
+                            and current medical charts have hundreds of data points on patients. This seemed like a perfect opportunity to let machines
+                            solve this problem.</span>
+                    </i>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:"Times New Roman";
+                mso-bidi-font-family:"Times New Roman";color:#44546A;mso-themecolor:text2;
+                background:white'>
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2;background:white'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <b style='mso-bidi-font-weight:normal'>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:"Times New Roman";
+                mso-bidi-font-family:"Times New Roman";color:#44546A;mso-themecolor:text2;
+                background:white'>Introduction
+                            <o:p></o:p>
+                        </span>
+                    </b>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2;background:white'>Predicting the viability of organ transplants is a very complicated decision that requires many different levels. For
+                        example, once a hospital has a transplantable organ they must inform the
+                        <i style='mso-bidi-font-style:normal'>Organ Procurement Organization</i> (OPO). The OPO then must certify the authorization of the organ, afterwards which
+                        the matching process begins. </span>
+                    <span style='font-family:"Helvetica Neue";
+                mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+                color:#44546A;mso-themecolor:text2'>The OPO will then contact the Organ Procurement and Transplant Network (OPTN) who will
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <b style='mso-bidi-font-weight:normal'>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:"Times New Roman";
+                mso-bidi-font-family:"Times New Roman";color:#44546A;mso-themecolor:text2'>Method and Results
+                            <o:p></o:p>
+                        </span>
+                    </b>
+                </p>
+                
+                <p class=MsoNormal>
+                    <b style='mso-bidi-font-weight:normal'>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:"Times New Roman";
+                mso-bidi-font-family:"Times New Roman";color:#44546A;mso-themecolor:text2'>
+                            <o:p>&nbsp;</o:p>
+                        </span>
+                    </b>
+                </p>
+                
+                <p class=MsoNormal>
+                    <u>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>Processing
+                            <o:p></o:p>
+                        </span>
+                    </u>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>The dataset obtained contained 15000 unidentifiable kidney transplant information. Most preprocessing of the data was
+                        done by the source and we further processed it using
+                        <i style='mso-bidi-font-style:normal'>data_preprocessing.py</i>. The dataset contained demographic information such as donor age, weight, ethnicity, in
+                        addition to clinical data such as dialysis history. The data was processed by the source to the shape of 1 dimension,
+                        so each transplant included 26 numerical values for each category. It should be noted the raw data had information
+                        in more complicated shapes (e.g. dialysis shape (3,2)) and in the future, a neural network might find trends in the
+                        more complicated data.
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>The success/failure of a transplant is a complicated statistic. Follow ups are done in the months and years after a transplant
+                        and rejection can happen at any time. Transplant’s may fail due to complications, unrelated illnesses, or surgical
+                        side effects. A common method of determining transplant success in kidney transplants is by grant failure. Graft
+                        failure is a significant complication following allogeneic hematopoietic cell transplantation (AHCT) that leads to
+                        rejection of the organ. We determined the transplant a success if a grant failure did not occur within 1 year. This
+                        is our
+                        <b style='mso-bidi-font-weight:
+                normal'>gf</b> value in Appendix A.
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <u>
+                        <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>Deep Learning with a Neural Network
+                            <o:p></o:p>
+                        </span>
+                    </u>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>We used
+                        <span class=SpellE>Keras</span> with a linear stack of layers using the sequential model. We had two hidden layers with 1024 nodes in
+                        each and an output layer with one node.
+                        <o:p></o:p>
+                    </span>
+                </p>
+                
+                <p class=MsoNormal>
+                    <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
+                "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
+                mso-themecolor:text2'>
+                        <o:p>&nbsp;</o:p>
+                    </span>
+                </p>
+            </div>
             <div style="margin-top: 20px; margin-bottom:20px;" id="dataset-details">
                 <h3>Dataset Details</h3>
                 <br>
-                <p>
-                    The data we yielded from is
-                    <a href="d2.csv">here</a>.
-                </p>
-                <p>It contains category of the following:</p>
-                <p>id -
-                    <em>The id of each anonymous individual.</em>
-                </p>
-                <p>dr -
-                    <em>Donor or Recipient</em>
-                </p>
-                <p>age -
-                    <em>Each person's age.</em>
-                </p>
-                <p>blood -
-                    <em>Each person's blood type.</em>
-                </p>
-                <p>gender -
-                    <em>Each person's gender.</em>
-                </p>
-                <p>organ -
-                    <em>The type of organ is being transplanted. Category is
-                        <b>Kidney, Heart, Pancrea, Liver, and Lung</b>
-                    </em>
-                </p>
-                <p>ethnicity -
-                    <em>Their ethnicity. Category is
-                        <b>White, Asian, Black, and Hispanic</b>
-                    </em>
-                </p>
-                <p>bmi -
-                    <em>Individual's BMI (Body Mass Index) which is a good indicator of their state of health. Category is in
-                        the range of
-                        <b>[17, 33]</b>
-                    </em>
-                </p>
-                <p>lod -
-                    <em>Alive or dead</em>
-                </p>
-                <p>acceptance -
-                    <em>If the organ is accepted. Category is
-                        <b>True or False</b>
-                    </em>
-                </p>
+                <table border=0 cellpadding=0 cellspacing=0 width=87 style='border-collapse:
+                 collapse;table-layout:fixed;width:65pt'>
+                    <col width=87 style='width:65pt'>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 width=87 style='height:16.0pt;width:65pt'>trr_id_code</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>tx_date</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>age_don</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>hgt_cm_don
+                            <span style='display:none'>_calc</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>wgt_kg_don
+                            <span style='display:none'>_calc</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>ethcat_don</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>hist_hyperte
+                            <span style='display:none'>ns_don</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>hist_diabete
+                            <span style='display:none'>s_don</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>cod_cad_don</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>creat_don</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>hep_c_anti_
+                            <span style='display:none'>don</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>non_hrt_don</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>bmis</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>drmis</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>txkid</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>tx_procedur_
+                            <span style='display:none'>ty_ki</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>cold_isch_ki</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>kdri_rao</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>init_age</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>init_date</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>diab</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>dialysis_date</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>on_dialysis</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>dial_date</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>est_rec_dob</td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>est_rec_age
+                            <span style='display:none'>_txp</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>est_rec_mon
+                            <span style='display:none'>ths_dial</span>
+                        </td>
+                    </tr>
+                    <tr height=21 style='height:16.0pt'>
+                        <td height=21 style='height:16.0pt'>gf</td>
+                    </tr>
+                    <![if supportMisalignedColumns]>
+                    <tr height=0 style='display:none'>
+                        <td width=87 style='width:65pt'></td>
+                    </tr>
+                    <![endif]>
+                </table>
             </div>
             <div style="margin-top: 20px; margin-bottom:20px;" id="Results">
                 <h3>Inital Results</h3>
