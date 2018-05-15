@@ -205,11 +205,18 @@
                     <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
                 "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#44546A;
                 mso-themecolor:text2'>We used
-                        <span class=SpellE>Keras</span> with a linear stack of layers using the sequential model. We had two hidden layers with 1024 nodes in
-                        each and an output layer with one node.
+                        <span class=SpellE>Keras</span> with a linear stack of layers using the sequential model. The structure of out model is below. At the end of training we had 1,807,053 trained weights
+                        and accuracy above 90%. It took around 20 epocs to near a converging value for the loss. Our model could be further analyzed using ROC curves.  
                         <o:p></o:p>
+                        <div class="card"style="width: 18rem;">
+                            <img class="card-img-top" src="plot.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Model</p>
+                            </div>
+                        </div>
                     </span>
                 </p>
+                
                 
                 <p class=MsoNormal>
                     <span style='font-family:"Helvetica Neue";mso-fareast-font-family:
@@ -357,7 +364,8 @@
             </div>
             <div style="margin-top: 20px; margin-bottom:20px;" id="Code">
                 <h3>Code</h3>
-                <a href="https://github.com/Shahaed/Brain-Watch">Github</a>
+                <a href="data_preprocessing.py">Preprocessing</a>
+                <a href="dl.py">Neural Network</a>
             </div>
             <footer class="text-center" style="margin-bottom:30px;">
                 <hr>
